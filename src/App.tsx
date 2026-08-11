@@ -342,7 +342,16 @@ function Footer() {
         <nav aria-label="Links do rodapé">{navItems.filter((_, i) => [0, 1, 3, 5, 6].includes(i)).map(([label, href]) => <a key={href} href={href}>{label}</a>)}</nav>
         <div className="footer__contact"><span>Fale com a gente</span><a href={whatsappUrl()} target="_blank" rel="noreferrer">{siteConfig.whatsappDisplay} <ArrowUpRight /></a><a href={siteConfig.instagramUrl}>{siteConfig.instagramHandle} <ArrowUpRight /></a></div>
       </div>
-      <div className="shell footer__bottom"><p>© {new Date().getFullYear()} JS Venezianas. Todos os direitos reservados.</p><p>Atendimento residencial e comercial.</p></div>
+      <div className="shell footer__bottom">
+        <div className="footer__legal">
+          <p>© {new Date().getFullYear()} JS Venezianas. Todos os direitos reservados.</p>
+          <p>Atendimento residencial e comercial.</p>
+        </div>
+        <p className="footer__credit">
+          Desenvolvido por{' '}
+          <a href="https://www.moralessolucoes.com.br/tecnologia/" target="_blank" rel="noopener noreferrer">Morales Soluções</a>
+        </p>
+      </div>
     </footer>
   )
 }
