@@ -264,7 +264,6 @@ p, h1, h2, h3, blockquote { margin-top: 0; }
 @media (max-width: 760px) {
   :root { --shell: calc(100% - 34px); }
   html { scroll-padding-top: 68px; }
-  body { padding-bottom: 70px; }
   .section { padding: 88px 0; }
   .section-intro { margin-bottom: 42px; }
   .section-intro h2 { font-size: clamp(2.65rem, 13vw, 4.2rem); line-height: .95; }
@@ -344,7 +343,7 @@ p, h1, h2, h3, blockquote { margin-top: 0; }
   .footer__top { grid-template-columns: 1fr 1fr; gap: 45px 30px; padding-bottom: 50px; }
   .footer__top > div:first-child { grid-column: span 2; }
   .footer__bottom { gap: 14px; }
-  .whatsapp-float { right: 0; bottom: 0; left: 0; min-height: 68px; justify-content: center; border-radius: 0; box-shadow: 0 -8px 30px rgba(0,0,0,.18); font-size: .86rem; }
+  .whatsapp-float { right: 16px; bottom: 16px; left: auto; }
 }
 
 @media (max-width: 390px) {
