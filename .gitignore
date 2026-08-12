@@ -11,3 +11,5 @@ source-images/
 Thumbs.db
 .vscode/
 .idea/
+
+.bat
