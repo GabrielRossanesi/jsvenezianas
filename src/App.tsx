@@ -28,6 +28,8 @@ function Logo({ inverted = false }: { inverted?: boolean }) {
 function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const scrollPositionRef = useRef(0)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -37,15 +39,44 @@ function Header() {
   }, [])
 
   useEffect(() => {
-    document.body.classList.toggle('menu-open', open)
-    return () => document.body.classList.remove('menu-open')
+    if (!open) return
+
+    scrollPositionRef.current = window.scrollY
+    document.body.style.setProperty('--menu-scroll-offset', `-${scrollPositionRef.current}px`)
+    document.body.classList.add('menu-open')
+
+    const closeWithEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+
+    const closeAboveMobile = (event: MediaQueryListEvent) => {
+      if (event.matches) setOpen(false)
+    }
+
+    const desktopQuery = window.matchMedia('(min-width: 801px)')
+    window.addEventListener('keydown', closeWithEscape)
+    desktopQuery.addEventListener('change', closeAboveMobile)
+
+    return () => {
+      document.body.classList.remove('menu-open')
+      document.body.style.removeProperty('--menu-scroll-offset')
+      window.removeEventListener('keydown', closeWithEscape)
+      desktopQuery.removeEventListener('change', closeAboveMobile)
+      const previousScrollBehavior = document.documentElement.style.scrollBehavior
+      document.documentElement.style.scrollBehavior = 'auto'
+      window.scrollTo(0, scrollPositionRef.current)
+      document.documentElement.style.scrollBehavior = previousScrollBehavior
+    }
   }, [open])
 
   return (
     <header className={`header ${scrolled || open ? 'header--solid' : ''}`}>
       <div className="header__inner shell">
         <Logo inverted={!scrolled && !open} />
-        <nav className={`nav ${open ? 'nav--open' : ''}`} aria-label="Navegação principal">
+        <nav id="mobile-navigation" className={`nav ${open ? 'nav--open' : ''}`} aria-label="Navegação principal">
           {navItems.map(([label, href]) => (
             <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
           ))}
@@ -53,7 +84,7 @@ function Header() {
             Solicitar orçamento <ArrowUpRight size={17} />
           </a>
         </nav>
-        <button className="menu-toggle" type="button" aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} onClick={() => setOpen(!open)}>
+        <button ref={menuButtonRef} className={`menu-toggle ${open ? 'menu-toggle--open' : ''}`} type="button" aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>
           <span /><span />
         </button>
       </div>
