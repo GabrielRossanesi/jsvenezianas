@@ -59,7 +59,7 @@ export const services = [
 ]
 
 export const benefits = [
-  ['Evita trocas desnecessárias', 'Recupere o sistema existente sempre que o reparo for a solução mais adequada.'],
+  ['Evita trocas desnecessárias', 'Uma alternativa inteligente antes de investir em uma nova esquadria.'],
   ['Prolonga a vida útil', 'A manutenção preventiva reduz o desgaste dos componentes.'],
   ['Devolve o conforto', 'Abra e feche sua veneziana com suavidade e menos esforço.'],
   ['Reduz ruídos e travamentos', 'Ajustes precisos melhoram o movimento e o encaixe das lâminas.'],
@@ -72,15 +72,6 @@ export const process = [
   ['Avaliação', 'Analisamos o problema e identificamos a solução adequada para o seu caso.'],
   ['Serviço', 'Executamos o reparo, a automação ou a higienização com cuidado.'],
   ['Tudo funcionando', 'Você volta a usar sua veneziana com conforto e tranquilidade.'],
-]
-
-export const gallery = [
-  { src: '/images/manutencao.webp', title: 'Manutenção', category: 'Ajuste de mecanismo', position: 'center' },
-  { src: '/images/hero-veneziana.webp', title: 'Resultado final', category: 'Veneziana residencial', position: '70% center' },
-  { src: '/images/automacao.webp', title: 'Automação', category: 'Mais conforto no dia a dia', position: 'center' },
-  { src: '/images/higienizacao.webp', title: 'Higienização', category: 'Limpeza técnica', position: 'center' },
-  { src: '/images/hero-veneziana.webp', title: 'Antes e depois', category: 'Espaço reservado para foto real', position: '35% center' },
-  { src: '/images/manutencao.webp', title: 'Serviço concluído', category: 'Espaço reservado para foto real', position: '80% center' },
 ]
 
 // PLACEHOLDERS: substituir todos os relatos abaixo por avaliações reais antes da publicação.
@@ -128,7 +119,7 @@ export const faq = [
   ['É necessário trocar toda a veneziana quando ela quebra?', 'Nem sempre. Em muitos casos é possível substituir apenas componentes ou realizar ajustes no mecanismo.'],
   ['É possível automatizar uma veneziana manual?', 'Dependendo do modelo e da estrutura existente, sim. Fazemos uma avaliação para verificar a possibilidade de automação.'],
   ['Vocês realizam higienização?', 'Sim. Realizamos higienização especializada para remover sujeira acumulada e melhorar a conservação da veneziana.'],
-  ['Vocês atendem residências e empresas?', 'Sim. Realizamos atendimento residencial e comercial.'],
-  ['Como solicitar um orçamento?', 'Entre em contato pelo WhatsApp. Se possível, envie algumas fotos ou um vídeo da veneziana para facilitar a avaliação inicial.'],
+  ['Vocês atendem residências e empresas?', 'Sim. Realizamos atendimento residencial e comercial em Curitiba e região metropolitana.'],
+  ['Como solicitar um orçamento?', 'Entre em contato pelo WhatsApp para um orçamento sem compromisso. Se possível, envie algumas fotos ou um vídeo da veneziana para facilitar a avaliação inicial.'],
   ['O que devo enviar na primeira mensagem?', 'Conte qual é o problema, informe o tipo de ambiente e envie fotos da veneziana inteira e do detalhe que precisa de atenção.'],
 ]

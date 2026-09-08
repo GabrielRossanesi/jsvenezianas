@@ -1,10 +1,11 @@
 // Substitua os dados abaixo antes da publicação. O número deve conter DDI + DDD, apenas dígitos.
 export const siteConfig = {
   companyName: 'JS Venezianas',
-  whatsappNumber: '5500000000000',
-  whatsappDisplay: 'WhatsApp a definir',
-  instagramUrl: '#',
-  instagramHandle: '@jsvenezianas',
+  whatsappNumber: '5541984359505',
+  whatsappDisplay: '(41) 98435-9505',
+  instagramUrl: 'https://www.instagram.com/jspersianas',
+  instagramHandle: '@jspersianas',
+  serviceArea: 'Curitiba e região metropolitana',
   whatsappMessage:
     'Olá! Encontrei a JS Venezianas pelo site e gostaria de solicitar um orçamento.',
 }
