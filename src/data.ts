@@ -15,8 +15,8 @@ export const services = [
     label: 'Reparo e conservação',
     title: 'Manutenção de venezianas',
     text: 'Correção de falhas, ajustes e substituição de componentes para recuperar o funcionamento da sua veneziana.',
-    image: '/images/manutencao.webp',
-    alt: 'Mãos protegidas ajustando o mecanismo de uma veneziana',
+    image: '/images/manutencao-veneziana.webp',
+    alt: 'Técnico ajustando a guia lateral de uma veneziana residencial de lâminas rígidas',
     benefits: [
       'Troca de fitas',
       'Correção de travamentos',
@@ -46,8 +46,8 @@ export const services = [
     label: 'Limpeza técnica',
     title: 'Higienização de venezianas',
     text: 'Limpeza técnica para remover poeira, sujeira acumulada e resíduos difíceis de alcançar na limpeza convencional.',
-    image: '/images/higienizacao.webp',
-    alt: 'Higienização cuidadosa das lâminas de uma veneziana',
+    image: '/images/higienizacao-veneziana.webp',
+    alt: 'Profissional limpando as lâminas rígidas de uma veneziana residencial',
     benefits: [
       'Melhor aparência',
       'Conservação da veneziana',

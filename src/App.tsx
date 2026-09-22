@@ -63,7 +63,7 @@ function Header({ subpage = false }: { subpage?: boolean }) {
       if (event.matches) setOpen(false)
     }
 
-    const desktopQuery = window.matchMedia('(min-width: 801px)')
+    const desktopQuery = window.matchMedia('(min-width: 1081px)')
     window.addEventListener('keydown', closeWithEscape)
     desktopQuery.addEventListener('change', closeAboveMobile)
 
@@ -270,7 +270,10 @@ function MediaLightbox({ items, selected, setSelected, lastTriggerRef }: {
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow
+    const previousScrollbarGutter = document.documentElement.style.scrollbarGutter
+    document.documentElement.style.scrollbarGutter = 'stable'
     document.body.style.overflow = 'hidden'
+    document.body.classList.add('lightbox-open')
     window.requestAnimationFrame(() => closeButtonRef.current?.focus())
 
     const onKey = (event: KeyboardEvent) => {
@@ -297,6 +300,8 @@ function MediaLightbox({ items, selected, setSelected, lastTriggerRef }: {
     window.addEventListener('keydown', onKey)
     return () => {
       document.body.style.overflow = previousOverflow
+      document.documentElement.style.scrollbarGutter = previousScrollbarGutter
+      document.body.classList.remove('lightbox-open')
       window.removeEventListener('keydown', onKey)
     }
   }, [items.length, lastTriggerRef, setSelected])
@@ -431,7 +436,7 @@ function GalleryArchive() {
           <div className="gallery-page__heading">
             <span className="eyebrow">Trabalhos realizados</span>
             <h1 id="gallery-page-title">Serviços que falam pelo resultado.</h1>
-            <p>Conheça alguns dos trabalhos realizados pela JS Venezianas em manutenção, automação e higienização de venezianas.</p>
+            <p>Fotos e vídeos reais de serviços executados pela JS Venezianas em manutenção, automação e higienização de venezianas.</p>
           </div>
           <div className="gallery-page__slats" aria-hidden="true">{Array.from({ length: 10 }, (_, index) => <i key={index} />)}</div>
         </div>
@@ -519,7 +524,7 @@ function Differentials() {
     <section className="differentials section">
       <div className="shell differentials__layout">
         <Reveal className="differentials__title"><SectionIntro eyebrow="Nosso jeito de trabalhar" title="Cuidado técnico, dentro do seu espaço." text="Cada atendimento começa entendendo o problema e termina com o ambiente organizado e a solução explicada." /></Reveal>
-        <Reveal className="differentials__image"><img src="/images/manutencao.webp" alt="Detalhe de manutenção cuidadosa em uma veneziana" loading="lazy" /></Reveal>
+        <Reveal className="differentials__image"><img src="/images/cuidado-tecnico-veneziana.webp" alt="Técnico realizando manutenção na guia de uma veneziana residencial" loading="lazy" /></Reveal>
         <div className="differentials__list">
           {differentials.map(item => <Reveal className="differential" key={item}><Check /><span>{item}</span></Reveal>)}
         </div>
