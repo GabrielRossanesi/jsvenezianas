@@ -488,7 +488,6 @@ function Testimonials() {
     <section className="testimonials section" id="depoimentos">
       <div className="shell">
         <Reveal><SectionIntro eyebrow="Prova social" title="Quem contrata, recomenda." text="O cuidado no atendimento importa tanto quanto o resultado do serviço." light /></Reveal>
-        <p className="demo-badge">Conteúdo demonstrativo — substituir por avaliações reais</p>
         <div className="testimonial-grid">
           {testimonials.map((testimonial) => (
             <Reveal className="testimonial" key={testimonial.name}>

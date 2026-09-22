@@ -212,7 +212,6 @@ p, h1, h2, h3, blockquote { margin-top: 0; }
 .gallery-page__item:hover .gallery-page__play, .gallery-page__item:focus-visible .gallery-page__play { color: var(--accent-light); background: rgba(7,16,20,.72); transform: translate(-50%, -50%) scale(1.06); }
 
 .testimonials { color: var(--white); background: var(--ink); }
-.demo-badge { display: inline-flex; margin: -34px 0 42px; padding: 6px 10px; color: var(--accent-light); border: 1px solid rgba(223,152,60,.3); border-radius: 4px; font-size: .62rem; letter-spacing: .07em; text-transform: uppercase; }
 .testimonial-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .testimonial { display: flex; min-height: 280px; flex-direction: column; padding: 30px; border: 1px solid rgba(255,255,255,.12); border-radius: 9px; background: rgba(255,255,255,.035); transition: border-color .3s var(--ease), background .3s, transform .3s var(--ease); }
 .testimonial:hover { border-color: rgba(223,152,60,.48); background: rgba(255,255,255,.055); transform: translateY(-3px); }
